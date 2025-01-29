@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class CombineLists {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first list (comma-separated): ");
+        String[] list1 = scanner.nextLine().replaceAll("[\\[\\] ]", "").split(",");
+        
+        System.out.print("Enter second list (comma-separated): ");
+        String[] list2 = scanner.nextLine().replaceAll("[\\[\\] ]", "").split(",");
+
+        if (list1.length != list2.length) {
+            System.out.println("Error: Lists must be of equal length.");
+        } else {
+            List<String> combined = new ArrayList<>();
+            for (int i = 0; i < list1.length; i++) {
+                combined.add(list1[i]);
+                combined.add(list2[i]);
+            }
+            System.out.println("Combined list: " + combined);
+        }
+
+        scanner.close();
+    }
+}
